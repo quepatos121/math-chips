@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{cite}
+
+
+\newtheorem{teor}{Theorem}
+\newtheorem{lema}{Lemma}
+
+% Start the document
+\begin{document}
+
+% Create a new 1st level heading
+\title{Non-strong 4-transitive digraphs}
+
+\section{Introduction}
+
+Here we define a \textit{digraph} as an ordered pair $D=(V,A)$, where $V$ is a finite set called the \textit{vertices} of $D$ and $A\subseteq V^{(2)}$ the set of \textit{arcs} or \textit{arrows} of $D$. There are no loops or multiple arrows in the same direction.
+An arrow $(u,v)$ of a digraph $D$ is \textit{asymmetric} if $(v,u)$ is not an arrow of $D$. In other case we say that $(u,v)$ and $(v,u)$ are \textit{symmetric}.
+
+Given a vertex $v$ of a digraph $D=(V,A)$, we define the \textit{out-neighborhood} of $v$ as the set $N_D^+(v)=\{u\in V|(u,v)\in A\}$. When no confusion can be made, the subscript $D$ can be removed. The elements of $N^+$ are called \textit{out-neighbors} of $v$. The \textit{out-degree} of $v$ is the number of out-neighbors that it has and it is denoted by $d_D^+(v)$. Definitions of \textit{in-neighborhood}, \textit{in-neighbor} and \textit{in-degree} can be analogously given.
+
+Let $u,v$ be vertices of a digraph $D$, as usual, an $uv$-path $P$ will be a  sequence of all different vertices. The \textit{lenght} of a path $P$ is the number of vertices in $P$ minus one.
+The \textit{distance} of $u$ and $v$ is the lenght of the shortest $uv$-path in $D$ and it is denoted by $d_D(u,v)$.
+If $D=(V,A)$ is a digraph and $X,Y\subseteq V$, the distance from $X$ to $Y$ is $min\{d_D(x,y)|x\in X, y\in Y\}$.
+
+A vertex $u$ reaches a vertex $u$ in $D$ if there is a $uv$-path in $D$.
+
+We say that a digraph $D$ is $k$-\textit{transitive} if the existence of a $uv$-path of length $k$ implies the existence of the arrow $(u,v)$.
+
+Let $D=(V,A)$ be a digraph and considere $X,Y\subseteq V$, an arc $(x,y)$ is an $XY$-\textit{arc} when $x\in X$ and $y\in Y$. If $X\cap Y=\emptyset$  we write $X\rightarrow Y$ when $(x,y)\in A$ for every $x\in X$ and $y\in Y$ and we write $X\Rightarrow Y$ when only $XY$-arcs are in $A$. When $X\rightarrow Y$ and $X\Rightarrow Y$ then we write $X\rightarrow Y$. If  $D_1$ and $D_2$ are subdigraphs of a digraph $D$, we will simply write $D_1\rightarrow D_2$ and $D_1D_2$-arc, instead of $V(D_1)\rightarrow V(D_2)$ and $V(D_1)V(D_2)$-arc, respectively. Also, if $X$ or $Y$ are sigletons, we will adress them by its element, for example, if $X=\{x\}$; we write $x\rightarrow Y$ or $d_D(x,Y)$, instead of $\{x\}\rightarrow Y$ or $d_D(\{x\},Y)$. 
+
+A digraph $D$ is \textit{strongly connected} of \textit{strong} if for every pair of vertices of $D$; $u$ and $v$, there are both, an $uv$-path and a $vu$-path. A \textit{strong component} of a digraph $D$ is a maximal strong subdigraph of $D$.
+
+The \textit{condensation} of a digraph $D$ is the digraph $D^*=(V^*,A^*)$, where $V*$ is the set of strong components of $D$ and $(S,T)$ is an arrow of $D^*$ if and only if there is a $ST$-arc.
+
+\begin{lema} The condensation of a digraph $D$ is an acyclic digraph.
+\end{lema}
+
+Since the composition of a digraph is acyclic, it has vertices of out-degree and in-degree equal to zero, the strong components with this property are called \textit{terminal} and \textit{initial} components of $D$, respectively.
+
+In [FALTA REFERENCIA] a caracterization of the strong 4-transitive digraphs is given by C. Hern\'andez-Cruz. In this work we will study the structure of the non-strong 4-transitive digraphs.
+
+\section{Distance from strong components}
+
+Here we will classify the posible outcome of taking an initial strong component that reaches a terminal strong component of a 4-transitive digraph in terms of the distance between them a the type of strong component.
+
+\begin{lema} Let $D$ be a non-strong $4$-transitive digraph and $D^*$ its condensation digraph. Suppose that $S$ and $T$ are an initial and a terminal strong components of $D$, respectively. Then $d_{D^*}(S,T)=1$ or $S$ and $T$ are singletons and $1\leq d_{D^*}(S,T)\leq 4$. More even, if $S$ or $T$ is isomorphic to $C_4$ then $S\Rightarrow T$.
+\end{lema}
+
+\textit{proof}. It follows from the fact that every vertex $v$ in a non-trivial strong 4-transitive digraph satisfies $d^+(v)\geq 1$ and so for every directed path of length 2 from an initial $S$ component to a non-trivial terminal component $T$ implies that the arc $(S,T)$ is in the condensation digraph of $D$.
+
+Also, if $T=C_4$ and there is a $Sv$-arc, for some $v\in T$, then $S\Rightarrow v$. The strong connectivity of $T$ and implies that $S\Rightarrow u$ for every $u\in T$ and since $S=C_4$ we have that $S\Rightarrow T$. 
+
+
+\begin{teor} Let $D$ be a $4$-transitive digraph and $D^*$ its condensation digraph. Let $S$ be a non-trivial initial component of $D^*$ and $H^*=D^*[S\cup N(S)]$. Then $H^*$ has a asymmetric star or double star with fountain $S$ as a generating subdigraph.
+\end{teor}
+
+\textit{proof} It follows from the previous lema. Since $d(S,T)\leq 3$
+
+
+
+
+\begin{lema} Let $G$ be a $4$-transitive digraph with exactly two strong components $G_1$ and $G_2$ such that $G_1\rightarrow G_2$ . Then one of the following occurs:
+
+	\begin{itemize} 
+		\item[$(i)$] $G1$ is a complete graph with order greater than 3 or $G_1=C_4$ , and so $G_1\Rightarrow G_2$
+		\item[$(ii)$] $G_1$ has a 3-ciclic extension with partition $U_1$,$U_2$ and $U_3$ and:
+		\begin{itemize}
+			\item[($ii.1)$] $G_2$ is a complete graph or $G_2=C_4$, and so $G_1\Rightarrow G_2$
+			\item[$(ii.2)$] $G_2$ has a 3-cycle extensión with partition $V_1,V_2$ and $V_3$. Whenever $U_i\rightarrow V_j$ then $U_{i+1}\Rightarrow V_{i+i}$ and $U_{i+2}\Rightarrow V_{j+2}$.
+			\item[$(ii.3)$]
+			\item[$(ii.4)$]
+		\end{itemize}
+		\item[$(iii)$] $G_1$ is a symetric 5-cycle and:
+		\begin{itemize}
+			\item[$(iii.1)$]
+			\item[$(iii.2)$]
+		\end{itemize}
+		FALTA COMPLETAR
+	\end{itemize}
+\end{lema}
+
+\end{document}

@@ -14,11 +14,6 @@ body {
   background-color: blueviolet;
 }
 
-@media (min-width:768px) {
-  .navbar-toggler {
-    display:none;
-  }
-}
 
 .nav-item{
   background-color: lightcoral;

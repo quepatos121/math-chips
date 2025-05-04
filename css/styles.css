@@ -1,0 +1,37 @@
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color: blueviolet;
+}
+
+#header-nav {
+  background-color: lightblue;
+  border-radius: 0;
+  border: 0;
+}
+
+.container-fluid{
+  background-color: blueviolet;
+}
+
+@media (min-width:768px) {
+  .navbar-toggler {
+    display:none;
+  }
+}
+
+.nav-item{
+  background-color: lightcoral;
+  text-align: center;
+  border: 1px solid black;
+}
+
+
+#block {
+
+  background-color: lightgreen;
+  height: 1000px;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin:50px;
+}

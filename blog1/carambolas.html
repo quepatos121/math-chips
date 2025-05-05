@@ -17,7 +17,7 @@
       <div class="container-fluid">
 
         <div class="navbar-brand">
-          <p>Math and Chips science Blog</p>
+          <p>¡Carambolas!</p>
         </div>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,10 +44,41 @@
 
   <div class="container">
     <div id='block' class="col-sm-12 col-md-12 col-lg-12">
-      lorem ipsum dolor sit amet, consecteur adipisicing elit, 
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      Ut enim ad minim veniam, 
-      quis nostrud exercitation ulamco laboris nisi aliaquip ex ea commodo consequat.
+Cada vez que alguien se entera que me gustaba jugar al billar, su primer comentario suele ser: Claro, estudiaste matemáticas. Mi respuesta siempre es: Sí, pero no por eso lo juego bien.
+
+Lo cierto es que hay un estrecho v\'inculo entre el juego del billar y las matemáticas. En particular con lo que tiene que ver con los \'angulos en las figuras geom\'etricas y especialmente con el juego de carambola.
+
+Comencemos entonces explicando cu\'ales son las reglas para jugar a la carambola. El juego se desarrolla sobre una mesa de billar la cual tiene proporción 2 a 1 respecto a su largo y ancho. Est\'a recubierta de una tela o paño para asegurar el \'optimo deslizamiento de las bolas. En este juego hay 3 de ellas y a diferencia del \textit{pool} no hay que introducirlas en ninguna tronera. A grandes rasgos, el objetivo del juego consiste en que, golpeando una de las bolas con un taco, a la que llamamos bola objetivo, esta logre el contacto con las dos restantes. Podemos agregar reglas adicionales que hacen el juego m\'as complicado, aumentando el grado de dificultad.
+
+Entre las reglas mas usuales est\'a la de la carambola de tres bandas. Al ser la mesa un rect\'angulo, esta cuenta con 4 lados, llamados bandas. Cabe mencionar que las bandas est\'an cubiertas con caucho para que cuando las bolas las impacten, estas no disminuyan su velocidad.
+
+Bueno, para jugar la carambola de tres bandas, el objetivo es que antes de concluir la carambola, la bola objetivo impacte tres de las bandas de la mesa. Es decir, despue\'es de impactar la bola objetivo, esta puede impactar una de las dos bolas restantes antes de rebotar tres veces en la mesa, pero una vez que impacta a la segunda bola, esto ya debi\'o haber ocurrido.
+
+Es en esta modalidad donde los \'angulos cobran importancia. La regla fundamental de una trayectoria dibujada por una bola al recorrer la mesa es que \textbf{el \'angulo que forma la trayectoria con la banda antes de impactarla es el mismo que se forma despu\'es del impacto}. En general, a una trayectoria con esta propiedad de la llama una \textbf{trayectoria de tipo billar}.
+
+ ¿Qu\'e hace a estas trayectorias tan especiales? Una de las propiedades m\'as importantes es que son las trayectorias de longitud m\'inima entre dos puntos. Por ejemplo, supongamos que tenemos dos bolas en la mesa de billar y queremos llegar de una a otra impactando dos bandas no paralelas. Resulta que la trayectoria m\'as corta para lograr este cometido es aquella que preserva los \'angulos de incidencia y refracci\'on en ambos impactos a las bandas, es decir, una trayectoria de tipo billar.
+
+Cuando golpeamos a la bola en un punto que no sea el centro, le imprimimos cierto efecto, lo cual causa que al rebotar en una banda, el \'angulo de incidencia sea diferente al \'angulo de refracci\'on, resultando as\'i en una trayectoria que no es de tipo billar. Es de nuestro inter\'es solo aquellas trayectorias que son de tipo billar.
+
+ Dejando de lado un poco el tradicional juego de billar en una mesa rectangular con proporciones 2 a 1, vamos a pensar que nuestra mesa pudiera tener otras formas geom\'etricas. Qu\'e tal que jug\'aramos en mesas triangulares o romboides.
+
+Para describir lo que puede ocurrir en estos casos vamos a platicar del concepto de reflexi\'on respecto a una recta en el plano. Cuando estamos en un plano, hay ciertas transformaciones de este que preservan distancias y otras monadas. Un tipo de estas transformaciones son las reflexiones respecto a una recta. Podemos pensarlas como aquellas en donde se intercambian los puntos por aquellos que est\'an a la misma distancia de una recta fija. Si nuestro plano fuera un pliego de papel (infinito) e hici\'eramos un dobl\'es a lo largo de la recta fija, los puntos que se intercambian son aquellos que se corresponden al juntar ambos lados del pliego. Trivialmente los puntos que est\'an sobre el "lomo" quedan fijos en esta transformaci\'on.
+
+La reflexiones no solo transforman los puntos en al plano, sino que tambi\'en tranforman a las trayectorias que se dibujan en \'el.
+
+Pensemos en una trayectoria $AB$ con direcci\'on igual a un \'angulo de 30° respecto a un eje referencia $X$. Supongamos que nuestra mesa de billar est\'a alineada con nuestro eje de referencia a lo largo de la mesa. Entonces las 2 de las bandas forman un \'angulo de 90° con el eje de referencia y 2 de ella forman un \'angulo nulo (pues son paralelas al eje de referencia).
+
+Resulta que la direcci\'on de la trayectoria $AB$ despu\'es de impactar una de las bandas con \'angulo de 90°, es la direcci\'on de la trayectoria $AB'$ donde $B'$ es el punto correspondiente a $B$ despu\'es de realizar una refelxi\'on respecto a una recta \ell la cual pasa por $A$ y forma un \'angulo de 90° con nuestro eje de referencia $X$.
+No es dif\'icil calcular que el \'angulo que forma $AB'$ con el eje de referencia es 90°+60°=150°
+
+En una mesa que no es rectangular, los \'angulos que forman las bandas con el eje de referencia pueden resultar en los m\'as variados, en contraste con los 2 \'angulos rectos que se forman con la mesa rectangular. Cuando todos los \'angulos que se forman son un multiplo racional de $\pi$, la figura de la mesa es un \textbf{pol\'igono racional}. Por ejemplo 45°, 60° o 300° pues son los m\'ultiplos $\frac{1}{4}\pi$, $\frac{1}{3}\pi$ y $\frac{5}{3}\pi$, respectivamente.
+
+
+Lo maravilloso de las mesas que tienen la forma de un poligono racional es que observando los cambios de direcci\'on de una trayectoria de tipo billar al rebotar en los lados de la mesa podemos armar superficies cerradas a manera de rompecabezas e incluso hay un teorema que nos dice el genero de estas superficies. Recordemos que el g\'enero de una superficie nos dice cuantos hoyos tiene. La esfera y la dona son ejemplos de superficies con g\'enero 0 y 1, respectivamente.
+
+
+Un cubo es una superficie de genero 0 construida con 6 cuadrados. Dependiendo de los \'angulos de nuestra mesa de billar, podemos obtener las m\'as variadas superficies que incluso nos resulte imposible dibujar con lapiz y papel. Por ejemplo LARANA.
+
     </div>
   </div>
 

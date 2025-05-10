@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="uft-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> ¡Carambolas!</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+
+
+<body>
+ 
+  <header>
+    <nav id="header-nav" class="navbar navar-default">
+      <div class="container-fluid">
+
+        <div class="navbar-brand">
+          <p>Densidad en una galaxia muy muy lejana</p>
+        </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">¡Carambolas!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Densidad en una galaxia muy muy lejana.</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ruedas y abanicos</a>
+        </li>
+
+
+      </div>
+    </nav>
+  </header>
+
+
+
+  <div class="container">
+    <div id='block' class="col-sm-12 col-md-12 col-lg-12">
+Podemos pensar en una gráfica como un conjunto de nodos y sus conexiones.
+Cuando dos nodos están conectados, dibujamos una arista entre ellos. Dado un conjunto con N nodos, decimos que la gráfica es completa si todas las posibles conexiones ocurren en la gráfica, es decir que entre cualesquiera dos nodos, hay una arista que los une.
+
+Podríamos decir que una gráfica es más o menos densa dependiendo de qué tan poblada de aristas se encuentra. Naturalmente las gráficas completas son las más densas y en contraparte, las gráficas vacías, aquellas donde no hay aristas, son las menos densas.
+
+Mientras más vértices tiene una gráficas, más densa es cuando es completa. Por ejemplo, en una gráfica completa con 5 vértices hay 10 aristas. En contraste, en una gráfica completa con 100 vértices hay 4950 aristas. La proporción entre aristas y vértices en las gráficas completas aumenta al aumentar el número de vértices.
+
+Dividamos las aristas de una gráfica completa con N nodos en dos conjuntos, los cuales distinguimos con los colores rojo y azul. La subgráfica azul será aquella gráfica con N vértices cuyas aristas son todas las aristas de color azul. Análogamente la subgráfica roja.
+Notamos que mientras más densa es la subgráfica azul, menos lo es la roja, y viceversa.
+
+Como es de esperarse, mientras más vértices tiene una gráfica completa, crece la densidad de al menos una de sus subgráficas, ya sea la azul o la roja.  Uno de los resultados más importantes de esta teoría es que para cualquier estructura S que se pueda formar con una gráfica, hay un número natural N_0 con la propiedad de que cada gráfica completa con más de N_0 nodos y con sus aristas bicoloreadas contiene a la estructura buscada de color azul o de color rojo. Un ejemplo sencillo es el siguiente: Supongamos que la estructura S es un triangulo, es decir, S consta de 3 nodos y las 3 aristas que los unen. Se puede probar que toda gráfica completa con más de 5 vértices y con sus aristas bicoloreadas contiene un triangulo de color azul o un triangulo de color rojo. Esto ocurre porque cuando una gráfica completa tiene más de 5 vértices, alguna de sus subgráficas, la azul o la roja, tiene la densidad de aristas suficiente para que sea inevitable que haya un triangulo en ella.  
+
+Para los que están familiarizados con definición de convergencia de una sucesión de números reales, es posible que hayan encontrado alguna similitud con lo descrito previamente. En efecto, una sucesión de número reales r_1,r_2,r_3,.... converge al número real r cuando para cualquier \epsilon>0 existe un número natural n_0 tal que si n>n_0, se cumple que r-r_n<\epsilon. Lo que quiere decir, dicho coloquialmente, que la sucesión se aglomera densamente en el real r.
+Aunque la densidad juega un papel importante en ambos casos, estamos resolviendo problemas esencialmente diferentes. Pero, y a todo esto, ¿dónde esta nuestra galaxia muy muy lejana?
+
+La galaxia de la que estamos hablando existe en el universo de lo abstracto, pero de forma similar a las galaxias que están muy lejanas de la tierra, a pesar de que están a millones de años luz, nos es posible dar una descripción de ellas.
+
+Si los números reales son lo que es terrenal, aquello que es tangible y a lo que estamos acostumbrados a utilizar en nuestro día a día, entonces nuestra galaxia muy muy lejana esta conformada de objetos que ni siquiera son números, sino objetos matemáticos que transforman a algo similar a un espacio vectorial. ¿Cómo se relacionan entonces? ¿Qué herramientas tenemos como especie humana para vislumbrar esta extraña y lejana galaxia?
+
+Para responder estas preguntas hablemos un poco de lo que son los espacios topológicos y a qué nos referimos cuando decimos que un conjunto es denso en otro. Los espacios topológicos son familias de conjuntos donde existe la noción de conjunto abierto y de conjunto cerrado. Por ejemplo, en los número reales los intervalos abiertos (a,b) son un conjunto abierto y los intervalos cerrados [a,b], son los conjuntos cerrados. Un conjunto denso en un espacio topológico es aquel en el que no importa qué tan pequeño sea un conjunto abierto en el espacio, siempre habrá un punto del conjunto denso que esté contenido en el abierto. Por ejemplo, volviendo a los número reales, allí, el subconjunto de números racionales es un conjunto denso. En efecto, sin importar que tan pequeño sea en un intervalo abierto (-\epsilon,\epsilon) siempre hay algún número racional (fraccionario) dentro del intervalo.
+
+Hay espacios topológicos muy variados y muy diferentes a los números reales, como es el caso de aquel que habita en nuestra galaxia y el cual está construido a partir de objetos matemáticos llamados módulos. Podemos pensar en ellos como algo similar a un espacio vectorial pero en donde los "vectores" no se comportan de forma tan bonita. Así como los espacios vectoriales tienen subespacios, los módulos tienen submódulos y los hay de forma que tengan infinitos de ellos, cada uno más grande que el anterior y contenidos los unos en los otros, cómo órbitas concéntricas de estrellas en una galaxia. En este espacio topológico, nuestros objetos, llamados endomorfismos, se encuentran "más cerca" mientras más "órbitas" coinciden en su actuar al transformar a los submódulos. De forma similar a los racionales en los reales, hay un teorema que nos dice que existe un subconjunto denso en este espacio topológico. Pero la densidad se traduce a escalas "astronómicas". Tratemos de explicar un poco más: Un conjunto abierto en este espacio define un objeto \alpha, llamado endomorfismo, el cual transforma a los submódulos. El que exista un subconjunto denso en este contexto implica que siempre podremos encontrar otro objeto \ro que se aproxima a \Alpha tanto como deseemos. Como ya mencionamos, \ro más se aproxima a \alpha mientras más coincide en su actuar al transformar submódulos con órbitas más grandotas y no importa qué tan grande sea la órbita de un submódulo, podremos encontrar un \ro que coincida con \Alpha en su actuar al transformar este submódulo.     
+
+
+¿Quién diría que la densidad obliga a que ocurran tan diversos fenómenos? Desde que aparezcan subgráficas azules o rojas en una gráfica completa bicoloreada, a números racionales en nuestros terrenales números reales, hasta endomorfismos galácticos transformadores de submódulos con infinitas órbitas en una galaxia muy muy lejana que existe solo en el universo de las matemáticas. Fascinante.
+
+
+
+    </div>
+  </div>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

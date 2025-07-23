@@ -1,0 +1,187 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{allrunes}
+\usepackage{multicol}
+
+
+%\usepackage{tkz-berge}
+\usetikzlibrary{arrows,shapes,matrix,decorations,shapes.geometric,arrows.meta}
+\newtheorem{defi}{Definici\'on}
+\newtheorem{lema}{Lema}
+\newtheorem{obs}{Observaci\'on}
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{teor}{Teorema}
+\newtheorem{cor}{Corolario}
+%\usepackage[top=2pt, bottom=1pt, left=-11pt, right=1pt, paperheight=560pt, paperwidth=1070pt]{geometry}
+\pagestyle{empty}
+\xdefinecolor{green}{RGB}{0,200,50}
+\xdefinecolor{yellow}{RGB}{200,200,0}
+
+
+
+
+\begin{document}
+\begin{center}
+{\LARGE{DECODIFICANDO RUNAS CON MATRICES}}
+\vspace{1cm}
+\end{center}
+Cuando comencé a leer El Hobbit de Tolkien, en la primera p\'agina se muestra el t\'itulo de libro junto con un subt\'itulo en runas germ\'anicas:
+\begin{center}
+\vspace{0.5cm}
+{\LARGE{ \textara{\th e} \textara{Hobbit}}}\\
+{\large{\textara{or}}}\\
+{\large{\textara{\th ere} \textara{and} \textara{bac}\textarn{S} \textara{again}}}
+\end{center}
+\vspace{0.5cm}
+
+Luego nos cuentan como las runas se escrib\'ian mediante cortes o incisiones en madera, para despu\'es decirnos que en el Mapa de Thror hay una mano que apunta a la puerta secreta y debajo hay una inscripci\'on:
+\vspace{0.2cm}
+\begin{center}
+\textara{Fiue} \textara{f}\textarc{o}\textara{t} \textara{high} \textara{\th e} \textara{dor}  \textara{and}  \textara{\th r}\textarc{o}  \textara{daY}  \textara{wal}\textarn{S}  \textara{abrest} \vdots  \textara{\th}. \textara{\th}.
+\end{center}
+\vspace{0.2cm}
+
+Donde las \'ultimas dos runas son las iniciales de Thror y Thrain. Al sureste del mapa tambi\'en se lee:
+\vspace{0.4cm}
+
+\textara{stand} \textara{bY}  \textara{\th e}  \textara{greY}  \textara{stone}  \textara{wher}  \textara{\th e}  \textara{\th rush} \textarn{S}\textara{no}\textarn{SS}\textara{s}  \textara{and}  \textara{\th e}  \textara{setti\ng}  \textara{sun}  \textara{wi\th}  \textara{\th e}  \textara{last}  \textara{light}  \textara{oF}  \textara{durins}  \textara{day}  \textara{will}  \textara{shine}  \textara{upon}  \textara{\th e}  \textarn{S}\textara{eYhole}.
+\vspace{0.4cm}
+
+Notemos que aunque no estemos familiarizados con las runas, es posible determinar el significado de los dos enunciados anteriores, apoyadonos unicamente en la similitud de estas con nuestro alfabeto y al contexto que se envuelve con el lenguaje ingl\'es usual.
+
+Se podr\'ia decir que la traducci\'on de un lenguaje a otro es un ejericicio de decodificaci\'on. 
+
+\newpage
+Lo anterior puede ser motivaci\'on para el estudio de la criptolog\'ia, la cual es el arte de codificar mensajes para ocultar su significado y este pueda ser decodificado una vez recibido el mensaje. Existen muchas formas de hacer esto. Por ejemplo, si recorremos el abecedario ciclicamente 2 letras:
+
+\begin{multicols}{7}
+\noindent$A\rightarrow C\\
+B\rightarrow D\\
+C\rightarrow E\\
+D\rightarrow F\\
+E\rightarrow G\\
+F\rightarrow H\\
+G\rightarrow I\\
+H\rightarrow J\\
+I\rightarrow K\\
+J\rightarrow L\\
+K\rightarrow M\\
+L\rightarrow N\\
+M\rightarrow O\\
+N\rightarrow P\\
+O\rightarrow Q\\
+P\rightarrow R\\
+Q\rightarrow S\\
+R\rightarrow T\\
+S\rightarrow U\\
+T\rightarrow V\\
+U\rightarrow W\\
+V\rightarrow X\\
+W\rightarrow Y\\
+X\rightarrow Z\\
+Y\rightarrow A\\
+Z\rightarrow B$
+\end{multicols}
+Por ejemplo, con esta codificaci\'on, la palabra LEY se codifica como NGA.\\
+
+Ahora, quisieramos utilizar matrices num\'ericas para codificar un mensaje, para poder hacerlo, hay que asignar valores num\'ericos a nuestro alfabeto. La asiganci\'on m\'as obvia ser\'ia asignar los valores del 1 al 26 para nuestros 26 caracteres posibles.
+
+\begin{multicols}{7}
+\noindent$A\rightarrow 1\\
+B\rightarrow 2\\
+C\rightarrow 3\\
+D\rightarrow 4\\
+E\rightarrow 5\\
+F\rightarrow 6\\
+G\rightarrow 7\\
+H\rightarrow 8\\
+I\rightarrow 9\\
+J\rightarrow 10\\
+K\rightarrow 11\\
+L\rightarrow 12\\
+M\rightarrow 13\\
+N\rightarrow 14\\
+O\rightarrow 15\\
+P\rightarrow 16\\
+Q\rightarrow 17\\
+R\rightarrow 18\\
+S\rightarrow 19\\
+T\rightarrow 20\\
+U\rightarrow 21\\
+V\rightarrow 22\\
+W\rightarrow 23\\
+X\rightarrow 24\\
+Y\rightarrow 25\\
+Z\rightarrow 26$
+\end{multicols}
+
+Supongamos que queremos codificar el mensaje HELLO WORLD. Para esto vamos a dividir el mensaje en partes de dos caracteres, es decir:
+$$\textnormal{HE~~LL~~OW~~OR~~LD}$$
+Ahora, vamos a asignar un vector colmna de dos entradas a cada parte del mensaje, la entradas son los valores n\'umericos asignados a cada letra. Lo vectores resultantes son: 
+
+$$\left(\begin{array}{c}8\\5\end{array}\right)~~\left(\begin{array}{c}12\\12\end{array}\right)~~\left(\begin{array}{c}15\\23\end{array}\right)~~\left(\begin{array}{c}15\\18\end{array}\right)~~\left(\begin{array}{c}12\\4\end{array}\right)$$
+
+
+Finalmente, hay que elegir una llave para decodificar el mensaje, esta llave solo debe conocerla el receptor del mensaje. Como ya lo mencionamos, nuestra llave ser\'a una matriz de $2\times 2$. Hay que elegirla invertible, esto es fundamental como veremos a la hora de docdificar el mensaje. Supongamos que es:
+$$\left(\begin{array}{cc}2&3\\1&1\end{array}\right)$$
+\newpage
+Para codificar el mensaje basta con multiplicar por la izquierda a cada vector por la matriz llave. Entonces, el mensaje codificado ser\'an los vectores:
+
+$$\left(\begin{array}{c}31\\13\end{array}\right)~~\left(\begin{array}{c}60\\24\end{array}\right)~~\left(\begin{array}{c}99\\38\end{array}\right)~~\left(\begin{array}{c}84\\33\end{array}\right)~~\left(\begin{array}{c}36\\16\end{array}\right)$$ 
+
+
+Cuando el receptor reciba este mensaje, lo \'unico que tendr\'a que hacer para decodificarlo ser\'a multiplicar por la izquierda a cada vector por la inversa de la matriz llave, de la cual es poseedor. Finalmente, al reasignar los valores alfab\'eticos a los valores num\'ericos el mensaje se revelar\'a al receptor.\\
+
+Es importante observar que para esta codificaci\'on no hubo ambiguedad en la asignaci\'on de los valores num\'ericos a los caracteres, pues fue una correspondencia biun\'ivoca entre ellos. Adem\'as, al ser la matriz llave invertible, la recuparaci\'on de los vectores originales tambi\'en pudo ocurrir sin errores. Es bien sabido que cuando es posible que haya interferencia en la transmisi\'on de un mensaje, existen c\'odigos(los cuales no son m\'as que un subconjunto apropiado de palabras) para corregir errores en la transmisi\'on. Por supuesto que esto reduce la variedad de mensajes que pueden ser transmitidos.\\
+
+Como ejercicio final, utilizaremos una matriz llave de $3\times 3$ para codificar el mensaje con runas inscrito al comienzo del texto:
+\vspace{0.2cm}
+\begin{center}
+\textara{Fiue} \textara{f}\textarc{o}\textara{t} \textara{high} \textara{\th e} \textara{dor}  \textara{and}  \textara{\th r}\textarc{o}  \textara{daY}  \textara{wal}\textarn{S}  \textara{abrest} \vdots  \textara{\th}. \textara{\th}.
+\end{center}
+\vspace{0.2cm}
+ Lo primero es asignar valores num\'ericos a las runas, para complicar la codificaci\'on, ahora eligiremos un orden desendente.
+
+\begin{multicols}{7}
+\noindent\textara{a}$\rightarrow$ 1\\
+\textara{b}$\rightarrow$ 2\\
+\textara{c}$\rightarrow$ 3\\
+\textara{d}$\rightarrow$ 4\\
+\textara{e}$\rightarrow$ 5\\
+\textara{f}$\rightarrow$ 6\\
+\textara{g}$\rightarrow$ 7\\
+\textara{h}$\rightarrow$ 8\\
+\textara{i}$\rightarrow$ 9\\
+\textara{j}$\rightarrow$ 10\\
+\textarn{S}$\rightarrow$ 11\\
+\textara{l}$\rightarrow$ 12\\
+\textara{m}$\rightarrow$ 13\\
+\textara{n}$\rightarrow$ 14\\
+\textara{\ng}$\rightarrow$ 15\\
+\textara{o}$\rightarrow$ 16\\
+\textara{p}$\rightarrow$ 17\\
+\textara{q}$\rightarrow$ 18\\
+\textara{r}$\rightarrow$ 19\\
+\textara{s}$\rightarrow$ 20\\
+\textara{t}$\rightarrow$ 21\\
+\textara{\th } $\rightarrow$ 22\\
+\textara{u}$\rightarrow$ 23\\
+\textara{w}$\rightarrow$ 25\\
+\textara{x}$\rightarrow$ 25\\
+\textara{y}$\rightarrow$ 26\\
+
+\end{multicols}
+ 
+
+
+
+ 
+
+
+\end{document}

@@ -137,9 +137,9 @@ Para codificar el mensaje basta con multiplicar por la izquierda a cada vector p
 $$\left(\begin{array}{c}31\\13\end{array}\right)~~\left(\begin{array}{c}60\\24\end{array}\right)~~\left(\begin{array}{c}99\\38\end{array}\right)~~\left(\begin{array}{c}84\\33\end{array}\right)~~\left(\begin{array}{c}36\\16\end{array}\right)$$ 
 
 
-Cuando el receptor reciba este mensaje, lo \'unico que tendr\'a que hacer para decodificarlo ser\'a multiplicar por la izquierda a cada vector por la inversa de la matriz llave, de la cual es poseedor. Finalmente, al reasignar los valores alfab\'eticos a los valores num\'ericos el mensaje se revelar\'a al receptor.\\
+Cuando el receptor reciba este mensaje, lo \'unico que tendr\'a que hacer para decodificarlo ser\'a multiplicar por la izquierda a cada vector por la inversa de la matriz llave, de la cual es poseedor. Finalmente, al reasignar los valores alfab\'eticos a los valores num\'ericos, el mensaje se revelar\'a al receptor.\\
 
-Es importante observar que para esta codificaci\'on no hubo ambiguedad en la asignaci\'on de los valores num\'ericos a los caracteres, pues fue una correspondencia biun\'ivoca entre ellos. Adem\'as, al ser la matriz llave invertible, la recuparaci\'on de los vectores originales tambi\'en pudo ocurrir sin errores. Es bien sabido que cuando es posible que haya interferencia en la transmisi\'on de un mensaje, existen c\'odigos(los cuales no son m\'as que un subconjunto apropiado de palabras) para corregir errores en la transmisi\'on. Por supuesto que esto reduce la variedad de mensajes que pueden ser transmitidos.\\
+Es importante observar que para esta codificaci\'on no hubo ambiguedad en la asignaci\'on de los valores num\'ericos a los caracteres, pues fue una correspondencia biun\'ivoca entre ellos. Adem\'as, al ser la matriz llave invertible, la recuperaci\'on de los vectores originales tambi\'en pudo ocurrir sin errores. Es bien sabido que cuando es posible que haya interferencia en la transmisi\'on de un mensaje, existen c\'odigos(los cuales no son m\'as que un subconjunto apropiado de palabras) para corregir errores en la transmisi\'on. Por supuesto que esto reduce la variedad de mensajes que pueden ser transmitidos.\\
 
 Como ejercicio final, utilizaremos una matriz llave de $3\times 3$ para codificar el mensaje con runas inscrito al comienzo del texto:
 \vspace{0.2cm}
@@ -147,7 +147,7 @@ Como ejercicio final, utilizaremos una matriz llave de $3\times 3$ para codifica
 \textara{Fiue} \textara{F}\textarc{o}\textara{t} \textara{high} \textara{\th e} \textara{dor}  \textara{and}  \textara{\th r}\textarc{o}  \textara{daY}  \textara{wal}\textarn{S}  \textara{abrest} \vdots  \textara{\th}. \textara{\th}.
 \end{center}
 \vspace{0.2cm}
- Lo primero es asignar valores num\'ericos a las runas, para complicar la codificaci\'on, ahora eligiremos un orden desendente.
+ Lo primero es asignar valores num\'ericos a las runas, para complicar la codificaci\'on, ahora eligiremos un orden descendente.
 
 \begin{multicols}{7}
 \noindent\textara{a}$\rightarrow$ 26\\

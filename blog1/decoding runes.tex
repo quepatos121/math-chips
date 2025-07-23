@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper]{article}
-
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
 \usepackage[all]{xy}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -31,7 +32,7 @@
 {\LARGE{DECODIFICANDO RUNAS CON MATRICES}}
 \vspace{1cm}
 \end{center}
-Cuando comencé a leer El Hobbit de Tolkien, en la primera p\'agina se muestra el t\'itulo de libro junto con un subt\'itulo en runas germ\'anicas:
+Cuando comencé a leer El Hobbit de Tolkien, en la primera p\'agina se muestra en ingl\'es el t\'itulo de libro en junto con un subt\'itulo en runas germ\'anicas:
 \begin{center}
 \vspace{0.5cm}
 {\LARGE{ \textara{\th e} \textara{Hobbit}}}\\
@@ -40,10 +41,10 @@ Cuando comencé a leer El Hobbit de Tolkien, en la primera p\'agina se muestra e
 \end{center}
 \vspace{0.5cm}
 
-Luego nos cuentan como las runas se escrib\'ian mediante cortes o incisiones en madera, para despu\'es decirnos que en el Mapa de Thror hay una mano que apunta a la puerta secreta y debajo hay una inscripci\'on:
+Luego nos cuentan c\'omo las runas se escrib\'ian mediante cortes o incisiones en madera, para despu\'es decirnos que en el Mapa de Thror hay una mano que señala a la puerta secreta y debajo hay una inscripci\'on:
 \vspace{0.2cm}
 \begin{center}
-\textara{Fiue} \textara{f}\textarc{o}\textara{t} \textara{high} \textara{\th e} \textara{dor}  \textara{and}  \textara{\th r}\textarc{o}  \textara{daY}  \textara{wal}\textarn{S}  \textara{abrest} \vdots  \textara{\th}. \textara{\th}.
+\textara{Fiue} \textara{F}\textarc{o}\textara{t} \textara{high} \textara{\th e} \textara{dor}  \textara{and}  \textara{\th r}\textarc{o}  \textara{daY}  \textara{wal}\textarn{S}  \textara{abrest} \vdots  \textara{\th}. \textara{\th}.
 \end{center}
 \vspace{0.2cm}
 
@@ -58,7 +59,7 @@ Notemos que aunque no estemos familiarizados con las runas, es posible determina
 Se podr\'ia decir que la traducci\'on de un lenguaje a otro es un ejericicio de decodificaci\'on. 
 
 \newpage
-Lo anterior puede ser motivaci\'on para el estudio de la criptolog\'ia, la cual es el arte de codificar mensajes para ocultar su significado y este pueda ser decodificado una vez recibido el mensaje. Existen muchas formas de hacer esto. Por ejemplo, si recorremos el abecedario ciclicamente 2 letras:
+Lo anterior puede ser motivaci\'on para estudiar algunos ejemplos de criptolog\'ia, la cual es el arte de codificar mensajes para ocultar su significado y este pueda ser decodificado una vez recibido el mensaje. Existen muchas formas de hacer esto. Por ejemplo, si recorremos el abecedario ciclicamente 2 letras:
 
 \begin{multicols}{7}
 \noindent$A\rightarrow C\\
@@ -88,7 +89,7 @@ X\rightarrow Z\\
 Y\rightarrow A\\
 Z\rightarrow B$
 \end{multicols}
-Por ejemplo, con esta codificaci\'on, la palabra LEY se codifica como NGA.\\
+Palabras arbitrarias como LEY o SECRETO se codifican como NGA o UGETGVQ, respectivamente.\\
 
 Ahora, quisieramos utilizar matrices num\'ericas para codificar un mensaje, para poder hacerlo, hay que asignar valores num\'ericos a nuestro alfabeto. La asiganci\'on m\'as obvia ser\'ia asignar los valores del 1 al 26 para nuestros 26 caracteres posibles.
 
@@ -121,7 +122,7 @@ Y\rightarrow 25\\
 Z\rightarrow 26$
 \end{multicols}
 
-Supongamos que queremos codificar el mensaje HELLO WORLD. Para esto vamos a dividir el mensaje en partes de dos caracteres, es decir:
+Supongamos que queremos codificar el mensaje HELLO WORLD. Para esto, vamos a dividir el mensaje en partes de dos caracteres, es decir:
 $$\textnormal{HE~~LL~~OW~~OR~~LD}$$
 Ahora, vamos a asignar un vector colmna de dos entradas a cada parte del mensaje, la entradas son los valores n\'umericos asignados a cada letra. Lo vectores resultantes son: 
 
@@ -131,7 +132,7 @@ $$\left(\begin{array}{c}8\\5\end{array}\right)~~\left(\begin{array}{c}12\\12\end
 Finalmente, hay que elegir una llave para decodificar el mensaje, esta llave solo debe conocerla el receptor del mensaje. Como ya lo mencionamos, nuestra llave ser\'a una matriz de $2\times 2$. Hay que elegirla invertible, esto es fundamental como veremos a la hora de docdificar el mensaje. Supongamos que es:
 $$\left(\begin{array}{cc}2&3\\1&1\end{array}\right)$$
 \newpage
-Para codificar el mensaje basta con multiplicar por la izquierda a cada vector por la matriz llave. Entonces, el mensaje codificado ser\'an los vectores:
+Para codificar el mensaje basta con multiplicar por la izquierda a cada vector por la matriz llave. As\'i, el mensaje codificado ser\'an los vectores:
 
 $$\left(\begin{array}{c}31\\13\end{array}\right)~~\left(\begin{array}{c}60\\24\end{array}\right)~~\left(\begin{array}{c}99\\38\end{array}\right)~~\left(\begin{array}{c}84\\33\end{array}\right)~~\left(\begin{array}{c}36\\16\end{array}\right)$$ 
 
@@ -143,45 +144,57 @@ Es importante observar que para esta codificaci\'on no hubo ambiguedad en la asi
 Como ejercicio final, utilizaremos una matriz llave de $3\times 3$ para codificar el mensaje con runas inscrito al comienzo del texto:
 \vspace{0.2cm}
 \begin{center}
-\textara{Fiue} \textara{f}\textarc{o}\textara{t} \textara{high} \textara{\th e} \textara{dor}  \textara{and}  \textara{\th r}\textarc{o}  \textara{daY}  \textara{wal}\textarn{S}  \textara{abrest} \vdots  \textara{\th}. \textara{\th}.
+\textara{Fiue} \textara{F}\textarc{o}\textara{t} \textara{high} \textara{\th e} \textara{dor}  \textara{and}  \textara{\th r}\textarc{o}  \textara{daY}  \textara{wal}\textarn{S}  \textara{abrest} \vdots  \textara{\th}. \textara{\th}.
 \end{center}
 \vspace{0.2cm}
  Lo primero es asignar valores num\'ericos a las runas, para complicar la codificaci\'on, ahora eligiremos un orden desendente.
 
 \begin{multicols}{7}
-\noindent\textara{a}$\rightarrow$ 1\\
-\textara{b}$\rightarrow$ 2\\
-\textara{c}$\rightarrow$ 3\\
-\textara{d}$\rightarrow$ 4\\
-\textara{e}$\rightarrow$ 5\\
-\textara{f}$\rightarrow$ 6\\
-\textara{g}$\rightarrow$ 7\\
-\textara{h}$\rightarrow$ 8\\
-\textara{i}$\rightarrow$ 9\\
-\textara{j}$\rightarrow$ 10\\
-\textarn{S}$\rightarrow$ 11\\
-\textara{l}$\rightarrow$ 12\\
-\textara{m}$\rightarrow$ 13\\
-\textara{n}$\rightarrow$ 14\\
-\textara{\ng}$\rightarrow$ 15\\
-\textara{o}$\rightarrow$ 16\\
-\textara{p}$\rightarrow$ 17\\
-\textara{q}$\rightarrow$ 18\\
-\textara{r}$\rightarrow$ 19\\
-\textara{s}$\rightarrow$ 20\\
-\textara{t}$\rightarrow$ 21\\
-\textara{\th } $\rightarrow$ 22\\
-\textara{u}$\rightarrow$ 23\\
-\textara{w}$\rightarrow$ 25\\
-\textara{x}$\rightarrow$ 25\\
-\textara{y}$\rightarrow$ 26\\
+\noindent\textara{a}$\rightarrow$ 26\\
+\textara{b}$\rightarrow$ 25\\
+\textara{c}$\rightarrow$ 24\\
+\textara{d}$\rightarrow$ 23\\
+\textara{e}$\rightarrow$ 22\\
+\textara{F}$\rightarrow$ 21\\
+\textara{g}$\rightarrow$ 20\\
+\textara{h}$\rightarrow$ 19\\
+\textara{i}$\rightarrow$ 18\\
+\textara{j}$\rightarrow$ 17\\
+\textarn{S}$\rightarrow$ 16\\
+\textara{l}$\rightarrow$ 15\\
+\textara{m}$\rightarrow$ 14\\
+\textara{n}$\rightarrow$ 13\\
+\textara{\ng}$\rightarrow$ 12\\
+\textarc{o}$\rightarrow$ 11\\
+\textara{p}$\rightarrow$ 10\\
+\textara{q}$\rightarrow$ 9\\
+\textara{r}$\rightarrow$ 8\\
+\textara{s}$\rightarrow$ 7\\
+\textara{t}$\rightarrow$ 6\\
+\textara{\th } $\rightarrow$ 5\\
+\textara{u}$\rightarrow$ 4\\
+\textara{w}$\rightarrow$ 3\\
+\textara{x}$\rightarrow$ 2\\
+\textara{Y}$\rightarrow$ 1\\
 
 \end{multicols}
  
+Separemos el mensaje ahora en partes de tres caracteres:
 
+\vspace{0.2cm}
+\begin{center}
+\textara{Fiu} ~\textara{eF}\textarc{o} ~\textara{t}\textara{hi} ~\textara{gh}\textara{\th}~ \textara{edo} ~\textara{ran}~  \textara{d\th r} ~ \textarc{o}\textara{da}~ \textara{Y}\textara{wa}~ \textara{l}\textarn{S}\textara{a}~ \textara{bre} ~\textara{st}
+\end{center}
+\vspace{0.2cm}
 
+Asignemos vectores columna de tres entradas a cada parte. Dado que la \'ultima parte solo tiene 2 caracteres, colocaremos una entrada igual a 0.
 
+{\tiny $$\left(\begin{array}{c}21\\18\\4\end{array}\right)~\left(\begin{array}{c}22\\21\\11\end{array}\right)~\left(\begin{array}{c}6\\19\\18\end{array}\right)~\left(\begin{array}{c}20\\19\\5\end{array}\right)~\left(\begin{array}{c}22\\23\\26\end{array}\right)~\left(\begin{array}{c}8\\26\\13\end{array}\right)~\left(\begin{array}{c}23\\5\\8\end{array}\right)~\left(\begin{array}{c}11\\23\\26\end{array}\right)~\left(\begin{array}{c}1\\3\\26\end{array}\right)~\left(\begin{array}{c}15\\16\\26\end{array}\right)~\left(\begin{array}{c}25\\8\\22\end{array}\right)~\left(\begin{array}{c}7\\6\\0\end{array}\right)$$}
  
+Elegimos la matriz invertible:
+$$\left(\begin{array}{ccc}1&1&0\\0&1&0\\0&1&1\end{array}\right)$$
 
+Al multimplicar por la izquierda, el mensaje codificado queda de la siguiente forma:
 
+{\tiny $$\left(\begin{array}{c}39\\18\\22\end{array}\right)~\left(\begin{array}{c}43\\21\\32\end{array}\right)~\left(\begin{array}{c}25\\19\\37\end{array}\right)~\left(\begin{array}{c}39\\19\\24\end{array}\right)~\left(\begin{array}{c}45\\23\\49\end{array}\right)~\left(\begin{array}{c}34\\26\\39\end{array}\right)~\left(\begin{array}{c}28\\5\\13\end{array}\right)~\left(\begin{array}{c}34\\23\\49\end{array}\right)~\left(\begin{array}{c}4\\3\\29\end{array}\right)~\left(\begin{array}{c}31\\16\\42\end{array}\right)~\left(\begin{array}{c}33\\8\\30\end{array}\right)~\left(\begin{array}{c}13\\6\\6\end{array}\right)$$}
 \end{document}

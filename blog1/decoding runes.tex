@@ -51,7 +51,7 @@ Luego nos cuentan c\'omo las runas se escrib\'ian mediante cortes o incisiones e
 Donde las \'ultimas dos runas son las iniciales de Thror y Thrain. Al sureste del mapa tambi\'en se lee:
 \vspace{0.4cm}
 
-\textara{stand} \textara{bY}  \textara{\th e}  \textara{greY}  \textara{stone}  \textara{wher}  \textara{\th e}  \textara{\th rush} \textarn{S}\textara{no}\textarn{SS}\textara{s}  \textara{and}  \textara{\th e}  \textara{setti\ng}  \textara{sun}  \textara{wi\th}  \textara{\th e}  \textara{last}  \textara{light}  \textara{oF}  \textara{durins}  \textara{day}  \textara{will}  \textara{shine}  \textara{upon}  \textara{\th e}  \textarn{S}\textara{eYhole}.
+\textara{stand} \textara{bY}  \textara{\th e}  \textara{greY}  \textara{stone}  \textara{wher}  \textara{\th e}  \textara{\th rush} \textarn{S}\textara{no}\textarn{SS}\textara{s}  \textara{and}  \textara{\th e}  \textara{setti\ng}  \textara{sun}  \textara{wi\th}  \textara{\th e}  \textara{last}  \textara{light}  \textara{oF}  \textara{durins}  \textara{daY}  \textara{will}  \textara{shine}  \textara{upon}  \textara{\th e}  \textarn{S}\textara{eYhole}.
 \vspace{0.4cm}
 
 Notemos que aunque no estemos familiarizados con las runas, es posible determinar el significado de los dos enunciados anteriores, apoyadonos unicamente en la similitud de estas con nuestro alfabeto y al contexto que se envuelve con el lenguaje ingl\'es usual.
@@ -59,7 +59,7 @@ Notemos que aunque no estemos familiarizados con las runas, es posible determina
 Se podr\'ia decir que la traducci\'on de un lenguaje a otro es un ejericicio de decodificaci\'on. 
 
 \newpage
-Lo anterior puede ser motivaci\'on para estudiar algunos ejemplos de criptolog\'ia, la cual es el arte de codificar mensajes para ocultar su significado y que este pueda ser decodificado una vez recibido el mensaje. Existen muchas formas de hacer esto. Por ejemplo, si recorremos el abecedario ciclicamente 2 letras:
+Lo anterior puede ser motivaci\'on para estudiar algunos ejemplos de criptograf\'ia, la cual es el arte de codificar mensajes para ocultar su significado y que este pueda ser decodificado una vez recibido el mensaje. Existen muchas formas de hacer esto. Por ejemplo, si recorremos el abecedario ciclicamente 2 letras:
 
 \begin{multicols}{7}
 \noindent$A\rightarrow C\\
@@ -129,7 +129,7 @@ Ahora, vamos a asignar un vector columna de dos entradas a cada parte del mensaj
 $$\left(\begin{array}{c}8\\5\end{array}\right)~~\left(\begin{array}{c}12\\12\end{array}\right)~~\left(\begin{array}{c}15\\23\end{array}\right)~~\left(\begin{array}{c}15\\18\end{array}\right)~~\left(\begin{array}{c}12\\4\end{array}\right)$$
 
 
-Finalmente, hay que elegir una llave para decodificar el mensaje, esta llave solo debe conocerla el receptor del mensaje. Como ya lo mencionamos, nuestra llave ser\'a una matriz de $2\times 2$. Hay que elegirla invertible, esto es fundamental, como veremos a la hora de decodificar el mensaje. Supongamos que es:
+Finalmente, hay que elegir una llave para codificar el mensaje, esta llave solo debe conocerla el receptor del mensaje. Como ya lo mencionamos, nuestra llave ser\'a una matriz de $2\times 2$. Hay que elegirla invertible, esto es fundamental, como veremos a la hora de decodificar el mensaje. Supongamos que es:
 $$\left(\begin{array}{cc}2&3\\1&1\end{array}\right)$$
 \newpage
 Para codificar el mensaje basta con multiplicar por la izquierda a cada vector por la matriz llave. As\'i, el mensaje codificado ser\'an los vectores:

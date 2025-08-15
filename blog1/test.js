@@ -1,7 +1,7 @@
 
 
 
-const btn = haiku.querySelector("button");
+const btn = document.querySelector("generator");
 btn.addEventListener("click", () => {
   btn.textContent = "¡¡ME HICISTE CLIC!! ❤️";
   setTimeout(() => {

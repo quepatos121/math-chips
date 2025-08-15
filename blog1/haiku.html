@@ -59,22 +59,24 @@
   <button class="generator">Generar hai ku</button>
   </div>
 
-
+<p id='haiku'></p> 
 
 
   <script> 
   const btn = document.querySelector(".generator");
 btn.addEventListener("click", () => {
-  btn.textContent = "Generando";
+  btn.textContent = "Generando ❤️";
   setTimeout(() => {
     btn.textContent = "Hai ku generator";
   }, 1000);
   const num1_1= Math.floor(Math.random() * 10);
-
+  document.getElementById("haiku").textContent=num1_1
 
 
 });
 </script>
+
+
 
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

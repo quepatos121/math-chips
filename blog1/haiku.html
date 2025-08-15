@@ -7,7 +7,6 @@
     <title> Hai ku generator</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="test.js"></script>
   </head>
 
 
@@ -62,7 +61,15 @@
 
 
 
-  
+  <script> 
+  const btn = document.querySelector(".generator");
+btn.addEventListener("click", () => {
+  btn.textContent = "¡¡ME HICISTE CLIC!! ❤️";
+  setTimeout(() => {
+    btn.textContent = "Hai ku generator";
+  }, 1000);
+});</script>
+
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/script.js"></script>

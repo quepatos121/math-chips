@@ -49,7 +49,7 @@
   <div class="container">
   <p> Sustantivos, por ejemplo: "El mar", "el cielo", "la lava".<p\>
   <input type='text' id="1"\><input type='text' id="2"\><input type='text' id="3"\><input type='text' id="4"\><input type='text' id="5"\><input type='text' id="6"\><input type='text' id="7"\><input type='text' id="8"\><input type='text' id="9"\><input type='text' id="0"\>
-  <p> Verbos o accio id="2"nes, por ejemplo: "Canta", "baila", "ríe".<p\>
+  <p> Verbos o acciones, por ejemplo: "Canta", "baila", "ríe".<p\>
   <input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\>
   <p> Adejtivos en plural, por ejemplo: "Rosas", "fieles", "fríos".<p\>
   <input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\>
@@ -80,15 +80,46 @@ class Dog {
 
   const btn = document.querySelector(".generator");
 btn.addEventListener("click", () => {
-  btn.textContent = "Generando ";
+  btn.textContent = "Generando ❤️ ";
   setTimeout(() => {
     btn.textContent = "Hai ku generator";
   }, 1000);
   const num1_1= Math.floor(Math.random() * 10);
-  const input1=document.getElementById('1')
-  const word1 = input1.value
-  const perro1= new Dog(1,word1)
-  document.getElementById("haiku").textContent= perro1.breed;
+  const input1=getElementById('1')
+  const input2=getElementById('2')
+  const input3=getElementById('3')
+  const input4=getElementById('4')
+  const input5=getElementById('5')
+  const input6=getElementById('6')
+  const input7=getElementById('7')
+  const input8=getElementById('8')
+  const input9=getElementById('9')
+  const input10=getElementById('0')
+  const word1=input1.value
+  const word2=input2.value
+  const word3=input3.value
+  const word4=input4.value
+  const word5=input5.value
+  const word6=input6.value
+  const word7=input7.value
+  const word8=input8.value
+  const word9=input9.value
+  const word10=input10.value
+  const dogs=[
+    {name:1, breed:word1}
+    {name:2, breed:word2}
+    {name:3, breed:word3}
+    {name:4, breed:word4}
+    {name:5, breed:word5}
+    {name:6, breed:word6}
+    {name:7, breed:word7}
+    {name:8, breed:word8}
+    {name:9, breed:word9}
+    {name:0, breed:word10}
+  ]
+
+  const adoptedDog = dogs.find(dog => dog.name === num1_1)
+  document.getElementById("haiku").textContent= adopetdDog.breed;
 
 });
 </script>

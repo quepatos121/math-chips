@@ -50,17 +50,21 @@
   <p> Sustantivos, por ejemplo: "El mar", "el cielo", "la lava".<p\>
   <input type='text' id="1"\><input type='text' id="2"\><input type='text' id="3"\><input type='text' id="4"\><input type='text' id="5"\><input type='text' id="6"\><input type='text' id="7"\><input type='text' id="8"\><input type='text' id="9"\><input type='text' id="0"\>
   <p> Verbos o acciones, por ejemplo: "Canta", "baila", "ríe".<p\>
-  <input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\>
+  <input type='text' id="11"\><input type='text' id="12"\><input type='text' id="13"\><input type='text' id="14"\><input type='text' id="15"\><input type='text' id="16"\><input type='text' id="17"\><input type='text' id="18"\><input type='text' id="19"\><input type='text' id="20"\>
   <p> Adejtivos en plural, por ejemplo: "Rosas", "fieles", "fríos".<p\>
-  <input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\><input type='text'\>
+  <input type='text' id="21"\><input type='text' id="22"\><input type='text' id="23"\><input type='text' id="24"\><input type='text' id="25"\><input type='text' id="26"\><input type='text' id="27"\><input type='text' id="28"\><input type='text' id="29"\><input type='text' id="30"\>
   </div>
 
   <div class="container">
   <button class="generator">Generar hai ku</button>
   </div>
 
-<p id='haiku'></p> 
 
+   <div class="container"> 
+    <p id='haiku1'></p> 
+    <p id='haiku2'></p> 
+    <p id='haiku3'></p> 
+  </div>
 
   <script> 
 class Dog {
@@ -80,11 +84,16 @@ class Dog {
 
   const btn = document.querySelector(".generator");
 btn.addEventListener("click", () => {
-  btn.textContent = "Generando ❤️";
+  btn.textContent = "Generando ";
   setTimeout(() => {
     btn.textContent = "Hai ku generator";
   }, 1000);
   const num1_1= Math.floor(Math.random() * 10);
+  const num1_2= Math.floor(Math.random() * 10);
+  const num2_1= Math.floor(Math.random() * 10);
+  const num2_2= Math.floor(Math.random() * 10);
+  const num3_1= Math.floor(Math.random() * 10);
+
   const input1=document.getElementById('1');
   const input2=document.getElementById('2');
   const input3=document.getElementById('3');
@@ -95,6 +104,26 @@ btn.addEventListener("click", () => {
   const input8=document.getElementById('8');
   const input9=document.getElementById('9');
   const input10=document.getElementById('0');
+  const input11=document.getElementById('11');
+  const input12=document.getElementById('12');
+  const input13=document.getElementById('13');
+  const input14=document.getElementById('14');
+  const input15=document.getElementById('15');
+  const input16=document.getElementById('16');
+  const input17=document.getElementById('17');
+  const input18=document.getElementById('18');
+  const input19=document.getElementById('19');
+  const input20=document.getElementById('20');
+  const input21=document.getElementById('21');
+  const input22=document.getElementById('22');
+  const input23=document.getElementById('23');
+  const input24=document.getElementById('24');
+  const input25=document.getElementById('25');
+  const input26=document.getElementById('26');
+  const input27=document.getElementById('27');
+  const input28=document.getElementById('28');
+  const input29=document.getElementById('29');
+  const input30=document.getElementById('30');
   const word1=input1.value;
   const word2=input2.value;
   const word3=input3.value;
@@ -105,8 +134,27 @@ btn.addEventListener("click", () => {
   const word8=input8.value;
   const word9=input9.value;
   const word10=input10.value;
- 
-const dogs =[
+  const word11=input11.value;
+  const word12=input12.value;
+  const word13=input13.value;
+  const word14=input14.value;
+  const word15=input15.value;
+  const word16=input16.value;
+  const word17=input17.value;
+  const word18=input18.value;
+  const word19=input19.value;
+  const word20=input20.value;
+  const word21=input21.value;
+  const word22=input22.value;
+  const word23=input23.value;
+  const word24=input24.value;
+  const word25=input25.value;
+  const word26=input26.value;
+  const word27=input27.value;
+  const word28=input28.value;
+  const word29=input29.value;
+  const word30=input30.value;
+const dogs1 =[
   {name:1,breed:word1},
   {name:2,breed:word2},
   {name:3,breed:word3},
@@ -118,9 +166,43 @@ const dogs =[
   {name:9,breed:word9},
   {name:0,breed:word10}
 ];
-  const adoptedDog = dogs.find(dog => dog.name === num1_1);
-  document.getElementById("haiku").textContent= adoptedDog.breed;
 
+
+const dogs2 =[
+  {name:1,breed:word11},
+  {name:2,breed:word12},
+  {name:3,breed:word13},
+  {name:4,breed:word14},
+  {name:5,breed:word15},
+  {name:6,breed:word16},
+  {name:7,breed:word17},
+  {name:8,breed:word18},
+  {name:9,breed:word19},
+  {name:0,breed:word20}
+];
+
+
+const dogs3 =[
+  {name:1,breed:word21},
+  {name:2,breed:word22},
+  {name:3,breed:word23},
+  {name:4,breed:word24},
+  {name:5,breed:word25},
+  {name:6,breed:word26},
+  {name:7,breed:word27},
+  {name:8,breed:word28},
+  {name:9,breed:word29},
+  {name:0,breed:word30}
+];
+  const adoptedDog1 = dogs1.find(dog => dog.name === num1_1);
+  const adoptedDog2 = dogs2.find(dog => dog.name === num2_1);
+  const adoptedDog3 = dogs1.find(dog => dog.name === num1_2);
+  const adoptedDog4 = dogs2.find(dog => dog.name === num2_2);
+  const adoptedDog5 = dogs3.find(dog => dog.name === num3_1);
+
+  document.getElementById("haiku1").textContent= adoptedDog1.breed+', '+adoptedDog2;
+  document.getElementById("haiku2").textContent= adoptedDog3.breed+', '+adoptedDog4;
+  document.getElementById("haiku3").textContent= adoptedDog5.breed;
 });
 </script>
 

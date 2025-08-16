@@ -71,7 +71,8 @@ class Dog {
     this.breed = param2;
   }
 }  
-const word1=document.getElementById('1').value
+const input1=document.getElementById('1')
+const word1=input1.value
 const perro1= new Dog(1,word1)
 
 
@@ -79,7 +80,7 @@ const perro1= new Dog(1,word1)
 
   const btn = document.querySelector(".generator");
 btn.addEventListener("click", () => {
-  btn.textContent = "Generando ❤️";
+  btn.textContent = "Generando";
   setTimeout(() => {
     btn.textContent = "Hai ku generator";
   }, 1000);

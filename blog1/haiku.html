@@ -106,7 +106,20 @@ btn.addEventListener("click", () => {
   const word9=input9.value;
   const word10=input10.value;
  
-  document.getElementById("haiku").textContent= word10;
+const dogs =[
+  {name:1,breed:word1},
+  {name:2,breed:word2},
+  {name:3,breed:word3},
+  {name:4,breed:word4},
+  {name:5,breed:word5},
+  {name:6,breed:word6},
+  {name:7,breed:word7},
+  {name:8,breed:word8},
+  {name:9,breed:word9},
+  {name:0,breed:word10}
+];
+  const adoptedDog = dogs.find(dog => dog.name === num1_1);
+  document.getElementById("haiku").textContent= adoptedDog.breed;
 
 });
 </script>

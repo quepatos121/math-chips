@@ -63,20 +63,16 @@
 
 
   <script> 
-public class Dog {
-    // Fields (attributes)
-    int name;
-    string breed;
+class Dog {
+  constructor(param1, param2) {
+    // The constructor is a special method for creating and initializing objects
+    // created with a class. It runs when a new instance of the class is created.
+    this.name = param1;
+    this.breed = param2;
+  }
+}  
 
-    // Constructor
-    public Dog(int name, string breed) {
-        this.name = name;
-        this.breed = breed;
-}
-}
-  
-
-
+const perro1= new Dog(1,'a')
 
 
 

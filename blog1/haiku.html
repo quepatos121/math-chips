@@ -63,16 +63,39 @@
 
 
   <script> 
+public class Dog {
+    // Fields (attributes)
+    int name;
+    string breed;
+
+    // Constructor
+    public Dog(int name, string breed) {
+        this.name = name;
+        this.breed = breed;
+}
+
+  
+
+public static void main(String[] args){
+  Dog perro1= new Dog(1,'a'); 
+  Dog perro2= new Dog(2,'b');
+  }
+
+}
+
+
+
+
   const btn = document.querySelector(".generator");
 btn.addEventListener("click", () => {
-  btn.textContent = "Generando ❤️";
+  btn.textContent = "Generando ";
   setTimeout(() => {
     btn.textContent = "Hai ku generator";
   }, 1000);
   const num1_1= Math.floor(Math.random() * 10);
   const str1 = String.valueOf(num1_1)
   const word1 = document.getElementById(str1);
-  document.getElementById("haiku").textContent= word1.value;
+  document.getElementById("haiku").textContent= perro1.breed;
 
 });
 </script>

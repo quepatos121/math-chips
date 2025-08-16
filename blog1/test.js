@@ -6,3 +6,15 @@ btn.addEventListener("click", () => {
   }, 1000);
 });
 
+public class Dog {
+    // Fields (attributes)
+    String name;
+    String breed;
+    int age;
+
+    // Constructor
+    public Dog(String name, String breed, int age) {
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
+    }

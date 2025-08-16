@@ -71,21 +71,21 @@ class Dog {
     this.breed = param2;
   }
 }  
-
-const perro1= new Dog(1,'a')
+const word1='beto'
+const perro1= new Dog(1,word1)
 
 
 
 
   const btn = document.querySelector(".generator");
 btn.addEventListener("click", () => {
-  btn.textContent = "Generando ❤️";
+  btn.textContent = "Generando";
   setTimeout(() => {
     btn.textContent = "Hai ku generator";
   }, 1000);
   const num1_1= Math.floor(Math.random() * 10);
   const str1 = String.valueOf(num1_1)
-  const word1 = document.getElementById(str1);
+  const word1 = document.getElementById('1');
   document.getElementById("haiku").textContent= perro1.breed;
 
 });

@@ -84,7 +84,7 @@ class Dog {
 
   const btn = document.querySelector(".generator");
 btn.addEventListener("click", () => {
-  btn.textContent = "Generando ";
+  btn.textContent = "Generando ❤️";
   setTimeout(() => {
     btn.textContent = "Hai ku generator";
   }, 1000);
@@ -200,8 +200,8 @@ const dogs3 =[
   const adoptedDog4 = dogs2.find(dog => dog.name === num2_2);
   const adoptedDog5 = dogs3.find(dog => dog.name === num3_1);
 
-  document.getElementById("haiku1").textContent= adoptedDog1.breed+', '+adoptedDog2;
-  document.getElementById("haiku2").textContent= adoptedDog3.breed+', '+adoptedDog4;
+  document.getElementById("haiku1").textContent= adoptedDog1.breed+', '+adoptedDog2.breed;
+  document.getElementById("haiku2").textContent= adoptedDog3.breed+', '+adoptedDog4.breed;
   document.getElementById("haiku3").textContent= adoptedDog5.breed;
 });
 </script>

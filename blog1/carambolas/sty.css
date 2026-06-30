@@ -33,3 +33,11 @@ color: black;
   width: 200px;
   background-color: lightblue;
 }
+
+
+img {
+
+max-width: 100%;
+height: auto;
+
+}

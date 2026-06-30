@@ -36,3 +36,10 @@ color: black;
 span {
   text-decoration-line: overline;
 }
+
+img {
+
+max-width: 100%;
+height: auto;
+
+}

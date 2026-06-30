@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="uft-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Ruedas y abanicos</title>
+    <link rel="stylesheet" href="sty.css">
+  </head>
+
+  <body>
+
+<div class="container" style="display: flex; justify-content: flex-end;">
+
+ <img src="image2.png" width="350" style="float: right; margin-left: 15px;"/>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="container" style="text-align: right;">
+      <a href="https://quepatos121.github.io/math-chips/blog1/carambolas/index.html"> ¡Carambolas! </a>
+
+  </div>
+
+
+    <div class="container" style="text-align: right;">
+
+
+      <a href="https://quepatos121.github.io/math-chips/blog1/densidad/index.html"> Densidad en una galaxia muy muy lejana </a>
+
+  </div>
+
+
+  <div class="container"style="text-align: right;">
+
+      <a href="https://quepatos121.github.io/math-chips/blog1/ruedasyabanicos/index.html"> Ruedas y abanicos </a>
+
+  </div>
+
+
+  <div class="container"style="text-align: right;">
+
+
+      <a href="https://quepatos121.github.io/math-chips/blog1/runes/index.html"> Decodificando runas con matrices </a>
+  </div>
+
+
+
+  <div class="container"style="text-align: right;">
+      <a href="https://quepatos121.github.io/math-chips/blog1/haiku/index.html"> Hai ku generator </a>
+
+  </div>
+
+
+  <div class="container">
+    <div id='block' class="col-sm-12 col-md-12 col-lg-12">
+
+
+
+
+  <div class="container" style="text-align: center;">
+      <p style="font-size: 24px"> Ruedas y abanicos </p>
+
+  </div>
+
+
+<div class="container">
+      <p> Cuando un abanico se puede desplegar en su totalidad de tal forma en la que los extremos en donde se encuentra la primer y última varilla se unen, se forma una rueda. Reciprocamente, cuando a una rueda la desconectamos, entre los rayos que van del centro a la circunferencia se puede elegir uno inicial y uno terminal y formar así un abanico. </p>
+
+  </div>
+
+
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="ruedasyabanicos1.jpg" width="450" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+<div class="container">
+      <p> Utilizando esta propiedad, el principio de recursión matemática y la teoría de gráficas, podemos contar el número de árboles generadores de una rueda con un número N de rayos y el de un abanico con N varillas.  Pero espera, ¿qué es un árbol generador? Y, ¿cuál es el principio de recursión matemática que se puede usar para contarlos?</p>
+
+  </div>
+
+
+
+<div class="container">
+      <p> Recordemos que la recursión matemática es aquella que nos permite calcular los términos de una sucesión en función de los términos anteriores de esta misma sucesión. Por ejemplo, si el n-ésimo término de una sucesión es la suma de todos los términos anteriores y el primer término es 1, entonces la sucesión obtenida es 1, 1, 2, 4, 8, 16,...</p>
+
+  </div>
+
+
+
+
+<div class="container">
+      <p> Probablemente la sucesión más conocida obtenida de esta forma es la de los números de Fibonacci, en ella, el n-ésimo término de la sucesión es la suma de los dos términos inmediato anteriores. Además es importante definir los términos iniciales, en este caso los primeros dos términos son iguales a 1. El resto se puede calcular con la regla de recursión ya mencionada.</p>
+
+  </div>
+
+
+<div class="container">
+      <p> Cambiando los términos iniciales se obtiene una sucesión diferente. Por ejemplo, la sucesión obtenida de considerar los primeros dos términos iniciales iguales a 2 y a 1, pero con la misma regla de recursión, da lugar a los números de Lucas.
+  </p>
+
+  </div>
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="FibLuc.png" width="600" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+
+
+
+
+<div class="container">
+      <p> Volviendo a las ruedas, los abanicos, y sus árboles generadores; en la teoría de gráficas, un árbol es aquel que es conexo y sin ciclos. Es generador cuando contiene a todos los nodos. </p>
+
+  </div>
+
+
+
+
+<div class="container">
+      <p>Pensaremos en una rueda de N rayos como aquella gráfica que resulta de tomar un ciclo con N nodos y un nodo adicional en el centro del cual surgen los rayos hacia el ciclo. 
+Similarmente, un abanico con N varillas es la gráfica que resulta de tomar una trayectoria con N nodos y un nodo adicional en el cual inciden las varillas que van a cada nodo de la trayectoria.
+  </div>
+
+
+
+
+  </div>
+ <div class="container">
+      <p> Entonces, encontrar un árbol generador de una rueda o de un abanico sería como encontrar una especie de esqueleto en donde todos los nodos estén conectados, pero en donde no se forma ningún ciclo.</p>
+
+  </div>
+
+
+
+ <div class="container">
+      <p> En la siguiente imagen mostramos en verde 3 árboles generadores distintos de una rueda con 5 rayos y 3 árboles generadores distintos del abanico con 6 varillas. Por supuesto que hay muchos más que los aquí mostrados.</p>
+
+  </div>
+
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="arboles1.png" width="600" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+
+
+ <div class="container">
+      <p> Ahora bien, para contar los árboles generadores de una gráfica, podemos emplear una técnica que divide a los árboles en dos conjuntos: Uno en donde están todos los que tienen a una arista fija y en otro, todos aquellos que no la tienen. Luego hay que notar que el número de árboles generadores de una gráfica que contienen una arista fija, es el mismo que el número de árboles generadores de la gráfica que resulta de contraer esta arista, es decir, de identificar los dos nodos que son los extremos de la arista. Para ilustrar esta técnica para contar árboles generadores, contemos los de la siguiente gráfica con forma de moño, eligiendo como arista fija aquella que une a los dos nodos no centrales del triangulo derecho del moño y a los cuales llamaremos <i>u</i> y <i>v</i>.
+     </p>
+
+  </div>
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="moño.png" width="300" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+ <div class="container">
+      <p> Encontrar el número de árboles generadores de esta gráfica es igual a sumar el número de los árboles generadores de las siguientes dos gráficas:
+</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="moño2.png" width="600" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+<div class="container">
+      <p> Para la primera gráfica; en esta, se identificaron los vértices <i>u</i> y <i>v</i> y se formó un ciclo de aristas paralelas. Podemos elegir unicamente una de estas dos aristas para evitar la formación de un ciclo y hay 3 posibles elecciones de un árbol generador del triángulo izquierdo. Concluimos que en total hay 6 posibles elecciones para esta gráfica. Uno de ellos es, por ejemplo, el mostrado en la siguiente imagen:
+</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="moño3.png" width="300" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+<div class="container">
+      <p> Para la segunda; dado que para conectar a los nodos <i>u</i> y <i>v</i> hay que utilizar la única arista que incide en cada uno de ellos, tenemos que hay 3 árboles generadores para esta gráfica, uno por cada árbol generador del triángulo izquierdo. Uno de ellos puede ser el siguiente:
+
+</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="moño4.png" width="300" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+<div class="container">
+      <p> Empleando la técnica para contar los árboles generadores obtenemos que el moño tiene en total 3+6=9 de ellos.
+
+
+</p>
+
+
+
+<div class="container">
+      <p> Utilizando la técnica mencionada anteriormente, pero para contar el número de árboles generadores de un abanico con N varillas, elijamos como arista fija la primera de las varillas del abanico. Entonces hay que contar el número de árboles generadores de la primera y segunda gráfica.
+
+</p>
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="abanicos1.png" width="600" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+
+<div class="container">
+      <p> Llamemos A<sub>N</sub> al número de árboles generadores de un abanico con N varillas y B<sub>N</sub> al número de árboles generadores de un abanico con N varillas, pero en donde las primeras dos de ellas son paralelas, como en la segunda gráfica de la imagen anterior.
+
+</p>
+
+
+
+<div class="container">
+      <p> En la tercera gráfica hay que incluir forzosamente a la arista que incide en <i>u</i>, y para el resto de los nodos basta con elegir un árbol generador del abanico con N-1 varillas que quedó. Esta oservación nos dice que el número de árboles generadores de la tercera gráfica es igual al número de árboles generadores de un abanico con N-1 varillas, que es A<sub>N-1</sub>. 
+</p>
+
+
+
+
+<div class="container">
+      <p> Concluimos que A<sub>N</sub>=B<sub>N</sub>+A<sub>N-1</sub>.
+
+</p>
+
+
+
+
+<div class="container">
+      <p> Ahora, empleando nuevamente la técnica para contar nuestros árboles pero en la segunda gráfica, elegiendo una de las varillas paralelas como arista fija, obtenemos que ahora, una de las gráficas es simplemente un abanico con N-1 varillas y por lo tanto tiene A<sub>N-1</sub> árboles generadores y la otra, al contraer la varilla paralela, desaparecen ambas para dar lugar a otro par de varillas paralelas. Al tener un varilla menos, esta gráfica tiene B<sub>N-1</sub> árboles generadores. Así B<sub>N</sub>=B<sub>N-1</sub>+A<sub>N-1</sub>.
+
+</p>
+
+<div class="container" style="text-align: center;">
+
+ <img src="abanicos2.png" width="600" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+<div class="container">
+      <p> De la misma forma que con el abanico de N varillas, al emplear nuestra técnica de conteo con un abanico de N-1 varillas, obtenemos que A<sub>N-1</sub>=B<sub>N-1</sub>+A<sub>N-1</sub>, despejando B<sub>N-1</sub> y sustituyendo en la ecuación anterior obtenemos que B<sub>N</sub>=2A<sub>N-1</sub>-A<sub>N-2</sub>. Finalmente al sustituir <sub>B_N</sub> en la primera ecuación se llega a que A<sub>N</sub>=3A<sub>N-1</sub>-A<sub>N-2</sub
+
+</p>
+
+
+
+<div class="container">
+      <p> Sorprendentemente, esta misma es la regla de recursión de los terminos impares de la sucesión de Fibonacci y con los mismos valores iniciales. Lo que quiere decir que la sucesión de los números de árboles generadores de los abanicos es la sucesión recursiva de los terminos impares de la sucesión de Fibonacci.
+</p>
+
+
+
+<div class="container">
+      <p> ¿Qué podemos decir de las ruedas? Supongamos que R<sub>N</sub> es el número de árboles generadores de una rueda con N rayos y consideremos una arista fija en el ciclo de la rueda. Notemos que el número de árboles generadores que no tienen a esta arista es el número de árboles generadores de un abanico de N rayos, es decir A<sub>N</sub>. Sea S el número de árboles generadores que sí contienen a la arista fija.
+
+
+</p>
+
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="ruedas1.png" width="600" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+<div class="container">
+      <p> Para encontrar S haremos las siguientes definiciones y observaciones.  
+
+Llamemos T<sub>N</sub> al número de árboles generadores de una rueda con N rayos que contienen un rayo fijo y <span>T</span><sub>N</sub> al número de árboles generadores que no lo contienen.
+
+
+</p>
+
+<div class="container" style="text-align: center;">
+
+ <img src="ruedas2.png" width="400" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+<div class="container">
+      <p> Primero hay que notar que T<sub>N</sub> es igual a A<sub>N</sub>. Esta observación se deduce de que podemos dividir a los A<sub>N</sub> árboles generadores de un abanico entre los que contienen a la varilla inicial y aquellos que no. De la misma forma, de los T<sub>N</sub> árboles generadores que contienen al rayo fijo, podemos dividirlos entre los que contienen a una arista incidente en el rayo y a los que no.
+
+</p>
+
+<div class="container" style="text-align: center;">
+
+ <img src="ruedas3.png" width="600" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+<div class="container">
+      <p> Volviendo a S. Notemos que hay dos rayos que inciden con la arista fija elegida, digamos r<sub>1</sub> y r<sub>2</sub>. Como en un árbol generador no hay ciclos, estos solo pueden contener simultáneamente uno de los dos rayos. Podemos entonces dividir a los árboles generadores en los que contienen a r<sub>1</sub>, los que contienen a r<sub>2</sub> y a los que no contienen a ninguno de los dos. Si llamamos a la cantidad de estos árboles generadores como S<sub>r<sub>1</sub></sub>, S<sub>r<sub>2</sub></sub> y S<sub>-{r_1,r_2}</sub>, respectivamente, entonces tenemos que S=S<sub>r<sub>1</sub></sub>+S<sub>r<sub>2</sub></sub>+S<sub>-{r_1,r_2}</sub>.
+
+
+</p>
+
+<div class="container" style="text-align: center;">
+
+ <img src="ruedas4.png" width="800" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+<div class="container">
+      <p> No es muy difícil observar que el número de árboles generadores de la rueda de N rayos que contienen a la arista fija y al rayo r<sub>1</sub> es igual T<sub>N-1</sub>. Es decir S<sub>r<sub>1</sub></sub>=T<sub>N-1</sub>. Similarmente S<sub>r<sub>2</sub></sub>=T<sub>N-1</sub>
+
+</p>
+
+
+
+<div class="container">
+      <p> 
+De la misma forma se puede observar que el número de árboles generadores de la rueda que contienen a la arista fija, pero a ninguno de los rayos r<sub>1</sub> ni r<sub>2</sub> es igual el número de árboles generadores de una rueda con N-1 rayos que no contiene a un rayo fijo, es decir S<sub>-{r_1,r_2}</sub>=<span>T</span><sub>N-1</sub>.
+
+</p>
+
+<div class="container" style="text-align: center;">
+
+ <img src="ruedas5.png" width="800" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+<div class="container">
+      <p> 
+Finalmente, es claro que T<sub>N-1</sub>+<span>T</span><sub>N-1</sub>=R<sub>N-1</sub>, pues podemos dividir a los árboles generadores entre los que contienen al rayo fijo y a los que no. Sutituyendo S en R<sub>N</sub>=A<sub>N</sub>+S obtenemos  que R<sub>N</sub>=A<sub>N</sub>+A<sub>N-1</sub>+R<sub>N-1</sub>
+</p>
+
+
+<div class="container">
+      <p> 
+Utilizando esta fórmula y la ya obtenida para los abanicos que dice que A<sub>N</sub>=F<sub>2N-1</sub>, se puede demostrar utilizando un argumento inductivo que R<sub>N</sub>=F<sub>2N+1</sub>-F<sub>2N-3</sub>-2. Sabiendo que F<sub>2N+1</sub>-F<sub>2N-3</sub>=L<sub>2N</sub> podemos llegar a que R<sub>N</sub>=3R<sub>N-1</sub>-R<sub>N-2</sub>+6 y a que esta es la misma regla de recursión que la de los términos pares de la sucesión de Lucas recorrida dos unidades negativamente. Es decir R<sub>N</sub>=L<sub>2N</sub>-2.  
+
+</p>
+
+
+
+
+    </div>
+  </div>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

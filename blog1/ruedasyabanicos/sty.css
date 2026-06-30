@@ -1,0 +1,38 @@
+body {
+  font-size: 16px;
+  color: black;
+  background-color: rgb(242, 215, 179);
+
+}
+
+a {
+ 
+  color: grey;
+
+}
+
+.texto-derecha {
+
+text-align: right;
+background-color: rgb(121, 0, 90);
+color: black;
+}
+
+
+
+.right-text-container {
+  text-align: right; /* Aligns text and inline elements to the right */
+}
+
+
+.parent {
+  display: flex;
+  justify-content: flex-end; /* Pushes items to the right */
+}
+.child {
+  width: 200px;
+  background-color: lightblue;
+}
+span {
+  text-decoration-line: overline;
+}

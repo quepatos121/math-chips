@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="uft-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Decodificando runas con matrices</title>
+    <link rel="stylesheet" href="sty.css">
+  </head>
+
+  <body>
+
+<div class="container" style="display: flex; justify-content: flex-end;">
+
+ <img src="image2.png" width="350" style="float: right; margin-left: 15px;"/>
+
+  </div>
+
+
+
+
+
+
+
+
+ 
+
+
+  <div class="container" style="text-align: right;">
+      <a href="https://quepatos121.github.io/math-chips/blog1/carambolas/index.html"> ¡Carambolas! </a>
+
+  </div>
+
+
+    <div class="container" style="text-align: right;">
+
+
+      <a href="https://quepatos121.github.io/math-chips/blog1/densidad/index.html"> Densidad en una galaxia muy muy lejana </a>
+
+  </div>
+
+
+  <div class="container"style="text-align: right;">
+
+      <a href="https://quepatos121.github.io/math-chips/blog1/ruedasyabanicos/index.html"> Ruedas y abanicos </a>
+
+  </div>
+
+
+  <div class="container"style="text-align: right;">
+
+
+      <a href="https://quepatos121.github.io/math-chips/blog1/runes/index.html"> Decodificando runas con matrices </a>
+  </div>
+
+
+
+  <div class="container"style="text-align: right;">
+      <a href="https://quepatos121.github.io/math-chips/blog1/haiku/index.html"> Hai ku generator </a>
+
+  </div>
+
+
+
+
+  <div class="container">
+    <div id='block' class="col-sm-12 col-md-12 col-lg-12">
+
+
+
+
+  <div class="container" style="text-align: center;">
+      <p style="font-size: 24px"> Decodificando runas con matrices </p>
+
+  </div>
+
+
+<div class="container">
+      <p> Cuando comencé a leer El Hobbit de Tolkien, en la primera página se mostraba en inglés el título de libro junto con un subtítulo en runas germánicas: </p>
+
+  </div>
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas1.png" width="250" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+<div class="container">
+      <p> Luego nos cuentan cómo las runas se escribían mediante cortes o incisiones en madera, para después decirnos que en el Mapa de Thror hay una mano que señala a la puerta secreta y debajo hay una inscripción:</p>
+
+  </div>
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas2.png" width="750" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+<div class="container">
+      <p> Donde las últimas dos runas son las iniciales de Thror y Thrain. Al sureste del mapa también se lee:</p>
+
+  </div>
+
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas3.png" width="750" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+<div class="container">
+      <p> Notemos que aunque no estemos familiarizados con las runas, es posible determinar el significado de los dos enunciados anteriores, apoyadonos únicamente en la similitud de estas con nuestro alfabeto y al contexto que se envuelve con el lenguaje inglés usual.
+</p>
+
+  </div>
+
+
+<div class="container">
+      <p> Se podría decir que la traducción de un lenguaje a otro es un ejericicio de decodificación.   </p>
+
+  </div>
+
+
+
+<div class="container">
+      <p> Lo anterior puede ser motivación para estudiar algunos ejemplos de criptografía, la cual es el arte de codificar mensajes para ocultar su significado y que este pueda ser decodificado una vez recibido el mensaje. Existen muchas formas de hacer esto. Por ejemplo, si recorremos el abecedario ciclicamente 2 letras:</p>
+
+  </div>
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas4.png" width="750" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+<div class="container">
+      <p>Palabras arbitrarias como LEY o SECRETO se codifican como NGA o UGETGVQ, respectivamente.
+  </div>
+
+
+
+
+
+
+  </div>
+ <div class="container">
+      <p> Ahora, quisieramos utilizar matrices numéricas para codificar un mensaje, para poder hacerlo, hay que asignar valores numéricos a nuestro alfabeto. La asiganción más obvia sería asignar los valores del 1 al 26 para nuestros 26 caracteres posibles.</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas5.png" width="750" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+ <div class="container">
+      <p> Supongamos que queremos codificar el mensaje HELLO WORLD. Para esto, vamos a dividir el mensaje en partes de dos caracteres, es decir:</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas6.png" width="250" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+ <div class="container">
+      <p> Ahora, vamos a asignar un vector columna de dos entradas a cada parte del mensaje, las entradas son los valores numéricos asignados a cada letra. Los vectores resultantes son:     </p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas7.png" width="450" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+ <div class="container">
+      <p> Finalmente, hay que elegir una llave para codificar el mensaje, esta llave solo debe conocerla el receptor del mensaje. Como ya lo mencionamos, nuestra llave será una matriz de 2 por 2. Hay que elegirla invertible, esto es fundamental, como veremos a la hora de decodificar el mensaje. Supongamos que es:</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas8.png" width="150" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+ <div class="container">
+      <p> Para codificar el mensaje basta con multiplicar por la izquierda a cada vector por la matriz llave. Así, el mensaje codificado serán los vectores:</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas9.png" width="450" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+   <div class="container">
+      <p> Cuando el receptor reciba este mensaje, lo único que tendrá que hacer para decodificarlo será multiplicar por la izquierda a cada vector por la inversa de la matriz llave, de la cual es poseedor. Finalmente, al reasignar los valores alfabéticos a los valores numéricos, el mensaje se revelará al receptor.</p>
+
+  </div>
+
+
+
+   <div class="container">
+      <p> Es importante observar que para esta codificación no hubo ambiguedad en la asignación de los valores numéricos a los caracteres, pues fue una correspondencia biunívoca entre ellos. Además, al ser la matriz llave invertible, la recuperación de los vectores originales también pudo ocurrir sin errores. Es bien sabido que cuando es posible que haya interferencia en la transmisión de un mensaje, existen códigos(los cuales no son más que un subconjunto apropiado de palabras) para corregir errores en la transmisión. Por supuesto que esto reduce la variedad de mensajes que pueden ser transmitidos.
+</p>
+
+  </div>
+
+
+
+   <div class="container">
+      <p> Como ejercicio final, utilizaremos una matriz llave de 3 por 3 para codificar el mensaje con runas inscrito al comienzo del texto:</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas10.png" width="750" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+   <div class="container">
+      <p>  Lo primero es asignar valores numéricos a las runas, para complicar la codificación, ahora eligiremos un orden descendente.</p>
+
+  </div>
+
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas11.png" width="750" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+   <div class="container">
+      <p> Separemos el mensaje ahora en partes de tres caracteres:</p>
+
+  </div>
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas12.png" width="750" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+   <div class="container">
+      <p> Asignemos vectores columna de tres entradas a cada parte. Dado que la última parte solo tiene dos caracteres, colocaremos una entrada igual a 0.</p>
+
+  </div>
+
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas13.png" width="850" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+   <div class="container">
+      <p>Elegimos la matriz invertible:</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas14.png" width="150" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+   <div class="container">
+      <p> Al multiplicar por la izquierda, el mensaje codificado queda de la siguiente forma:</p>
+
+  </div>
+
+<div class="container" style="text-align: center;">
+
+ <img src="runas15.png" width="850" style="float: center; margin-left: 15px;"/>
+
+  </div>
+
+
+
+    </div>
+  </div>
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
